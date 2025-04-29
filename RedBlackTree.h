@@ -7,6 +7,7 @@
 #define COLOR_DOUBLE_BLACK 2
 
 #include <iostream>
+#include <climits>
 
 using namespace std;
 
@@ -27,18 +28,21 @@ class RedBlackTree {
 		RedBlackTree();
 		RedBlackTree(int newData);
 		RedBlackTree(const RedBlackTree &rbt);
+		~RedBlackTree();
 
 		string ToInfixString() const {return ToInfixString(root);};
 		string ToPrefixString() const { return ToPrefixString(root);};
 		string ToPostfixString() const { return ToPostfixString(root);};
 
 		void Insert(int newData);
+		void LeftRotate(RBTNode *node);
+		void RightRotate(RBTNode *node);
 
 		bool Contains(int data) const ;
 		size_t Size() const {return numItems;};
 		int GetMin() const;
 		int GetMax() const;
-		
+		RBTNode *GetUncle(RBTNode *node);
 	
 	private: 
 		unsigned long long int numItems  = 0;
@@ -50,18 +54,13 @@ class RedBlackTree {
 		
 		static string GetColorString(const RBTNode *n);
 		static string GetNodeString(const RBTNode *n);
-		
+		RBTNode *GetUncle(RBTNode *node) const;
 		void BasicInsert(RBTNode *node);
 		void InsertFixUp(RBTNode *node);
 		
-		RBTNode *GetUncle(RBTNode *node) const;
-		
 		bool IsLeftChild(RBTNode *node) const;
 		bool IsRightChild(RBTNode *node) const;
-		
-		void LeftRotate(RBTNode *node);
-		void RightRotate(RBTNode *node);
-		
+		void del(RBTNode* node);
 		RBTNode *CopyOf(const RBTNode *node);
 
 
