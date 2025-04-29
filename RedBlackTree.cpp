@@ -10,18 +10,18 @@
 
 https://www2.cs.sfu.ca/CourseCentral/307/abulatov/lectures/13.pdf
 
+Zybook 7.12
+
+Zybook 8.12 to 8.15
+
 https://www.geeksforgeeks.org/postorder-traversal-of-binary-tree/
 
-For source two, which is the geeksforgeeks one, I mainly used just this algorithm:
+For source three, which is the geeksforgeeks one, I mainly used just this algorithm:
 
 If root is NULL then return
 Recursively traverse the left subtree.
 Recursively traverse the right subtree.
 Process the root node (e.g., print its value).
-
-Zybook 7.12
-
-Zybook 8.12 to 8.15
 
 */
 
